@@ -1,0 +1,125 @@
+.container .option_item {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: auto;
+}
+
+.container .option_item .checkbox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	opacity: 0;
+}
+
+.option_item .option_inner {
+	width: 100%;
+	height: auto;
+	background: #fff;
+	border-radius: 5px;
+	text-align: center;
+	cursor: pointer;
+	color: #585c68;
+	display: block;
+	/*border: 5px solid transparent;*/
+	position: relative;
+}
+
+.shadow-wrapper  {
+  background-image: url(../img/quiz/ico/checked.svg);
+  background-color: rgba(0, 0, 0, .5);
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  padding: 15px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+.checkbox:checked ~ .option_inner .shadow-wrapper {
+  opacity: 50;
+}
+
+.shadow-wrapper-decoration {
+	width: 100%;
+	height: 100%;
+	border: 1px solid rgba(0,163,211,.75);
+}
+
+.shadow-wrapper-box  {
+	background-image: url(../img/quiz/ico/checkbox-checked.svg);
+	background-position: center;
+	background-repeat: no-repeat;
+	position: absolute;
+	padding: 15px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	opacity: 0;
+}
+
+.checkbox:checked ~ .option_inner .shadow-wrapper-box {
+	opacity: 1;
+}
+
+/* Input file */
+.custom-file-button input[type=file] {
+	/* margin-left: -2px; */
+	color: #191919;
+	font-family: HelveticaNeueCyr-Light;
+	font-size: 18px;
+	font-size: 18px;
+}
+
+.custom-file-button input[type=file]::-webkit-file-upload-button {
+	display: none;
+}
+
+.custom-file-button input[type=file]::file-selector-button {
+	display: none;
+}
+
+.custom-file-button:hover label {
+	background-color: #0092BD;
+	cursor: pointer;
+}
+
+.custom-file-button .form-control {
+	border: none;
+}
+
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+	border: none;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: 0;
+	padding-top: 10px;
+}
+
+.input-group-text {
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+	padding-left: 55px;
+	padding-right: 55px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #00A3D3;
+    border: 1px solid #00A3D3;
+    border-radius: 0.25rem;
+	color: #ffff;
+	font-family: HelveticaNeueBoldCondensed;
+	font-size: 20px;
+	transition: .2s;
+}
+/* End input file */

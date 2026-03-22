@@ -1,0 +1,242 @@
+/* HEADER */
+
+
+/** Header nav top **/
+.header-nav-top {
+	width: 100%;
+	border-bottom: 1px solid rgba(255,255,255,.25);
+}
+
+/*.header-top-menu span,
+.header-top-menu .nav-link,*/
+.header-nav-top a.nav-link {
+	font-family: Gilroy-Regular;
+	font-size: 14px;
+	color: #C8C8C8;
+}
+
+.header-nav-top a.top-menu-tel.nav-link {
+	font-family: HelveticaNeueBoldCondensed;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+.nav-li-float-left {
+    width: 24px;
+    float: left;
+    margin: auto;
+    margin-right: 10px;
+	text-align: center;
+}
+
+.nav-li-float-right {
+    width: calc(100% - 24px);
+    float: right;
+    margin: auto;
+    line-height: 16px;
+}
+/** End header nav top **/
+/* END HEADER */
+
+
+/*** MENU ***/
+.site-menu a {
+	font-size: 1rem!important;
+	font-weight: 400;
+}
+
+.site-menu .has-children > a {
+	font-size: 1rem!important;
+	font-weight: 400;
+}
+
+
+/** Header nav bottom **/
+.header-nav-bottom {
+	/* border-top: 1px solid rgba(175,175,175,.5);
+	background: rgba(248,249,250,.85);
+	position: absolute;
+	width: 100%;
+	z-index: 999; */
+}
+
+.header-nav-bottom a.nav-link.dropdown-toggle,
+.header-nav-bottom a.nav-link {
+	font-family: Gilroy-Medium;
+	font-size: 14px;
+	color: #C8C8C8;
+	text-transform: uppercase;
+}
+
+.header-nav-bottom .nav-link img {
+	position: relative;
+	bottom: 2px;
+}
+
+.header-nav-bottom a.nav-link:hover,
+.header-nav-bottom a.nav-link.active {
+	color: var(--corporate-color-1);
+}
+
+.dropdown-item {
+	font-family: Gilroy-Medium;
+	font-size: 14px;
+	color: var(--dark-color);
+	text-transform: uppercase;
+}
+
+/*
+.dropdown-item a {
+	text-decoration: none;
+}*/
+
+.dropdown-toggle::after {
+	background-image: url(../img/ico/accordion-arrow.svg);
+    background-position: bottom;
+    vertical-align: 0;
+    margin-left: 14px;
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    background-repeat: no-repeat;
+    border: none;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: var(--corporate-color-1);
+    text-decoration: none;
+    background-color: white;
+}
+/** Header nav bottom **/
+
+
+/** Sliding header **/
+#sliding-header {
+	width: 100%;
+	background: #FFFFFF;
+	transition: .5s;
+	position: fixed;
+	top: -100px;
+	z-index: 999;
+}
+
+#sliding-header .navbar-brand img {
+	max-width: 200px;
+}
+
+#sliding-header .nav-link img {
+	position: relative;
+	bottom: 4px;
+}
+
+.top-menu-tel {
+	font-family: HelveticaNeueBoldCondensed;
+	font-size: 18px;
+	text-decoration: none;
+	color: var(--default-color);
+}
+
+/* Navbar brand */
+a.navbar-brand {
+	margin-right: 0; }
+	
+	/* sm (less than 576px) */
+	@media (max-width: 575.98px) {
+		.navbar-brand img {
+			height: 40px;
+		}
+	}
+	/* End navbar brand */
+
+#sliding-header a.nav-link {
+	color: var(--dark-color);
+}
+
+#sliding-header a.nav-link:hover,
+#sliding-header a.nav-link.active {
+	color: var(--corporate-color-1);
+}
+
+/* lg (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+	#sliding-header {
+		top: 0px;
+		transition: 0;
+	}
+	#sliding-header .navbar-brand img {
+		max-width: 135px;
+	}
+	
+	.nav-item .dropdown .dropdown-toggle .dropdown-menu {
+		margin-left: 0px;
+	}
+}
+/** End sliding header **/
+/*** END MENU ***/
+
+
+/*** HOME ***/
+/* Home video section */
+.home-video-section {
+	/* width: 100%; */
+	/* height: 600px; */
+	overflow: hidden;
+    position: relative;
+}
+/* End home video section */
+
+
+/** Main home section **/
+.main-home-section {
+	min-height: 640px;
+} /** End main home section **/
+
+
+/* Parallax home section */
+.parallax-home-section {
+	min-height: 640px;
+	width: 100%;
+	position: fixed;
+	background: url(../img/header-catalog-background.jpg) no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	z-index: -1;
+	/*display: block;*/ }
+
+	/* md (less than 768px) */
+	@media (max-width: 767.98px) {
+		.parallax-home-section {
+			background-position: 15% 50%;
+		}
+	}
+/* End parallax home section */
+
+
+.home-subtitle {
+	font-family: Gilroy-Light;
+	font-size: 24px;
+	line-height: 32px;
+	color: #EBEBEB; }
+	
+	@media (max-width: 991.98px) {
+		.home-subtitle {
+			font-size: 22px;
+			line-height: 25px;
+		}
+	}
+
+
+/** Main home section **/
+.home-section-height {
+	min-height: 425px; }
+
+	@media (max-width: 991.98px) {
+		.home-section-height {
+			min-height: 640px;
+			padding-top: 100px;
+			padding-bottom: 60px;
+		}
+	}
+/** End main home section **/
+/*** END HOME ***/
