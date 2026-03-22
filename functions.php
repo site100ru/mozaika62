@@ -407,104 +407,42 @@
 		}
 		return $post_id;
 	}
-	
-	
-	/* Подключение стилей родительской темы
-	add_action('wp_enqueue_scripts', 'enqueue_parent_styles', 0);
-	function enqueue_parent_styles() {
-		wp_enqueue_style( 'parent-bootstrap-style', get_template_directory_uri() . '/css/bootstrap.min.css');
-		wp_enqueue_style( 'parent-theme-css', get_template_directory_uri().'/css/theme.css' );
-		wp_enqueue_style( 'parent-style-css', get_template_directory_uri().'/style.css' );
-	}
-
-	// Подключение стилей дочерней темы
-	add_action('wp_enqueue_scripts', 'enqueue_child_styles', 5);
-	function enqueue_child_styles() {
-		wp_enqueue_style( 'child-theme-css', get_stylesheet_directory_uri() . '/css/theme.css', array( 'parent-theme-css' ) );
-		wp_enqueue_style( 'child-style-css', get_stylesheet_directory_uri().'/style.css', array( 'parent-style-css' ) );
-	}*/
 
 
-/* Подключение стилей родительской темы
-add_action('wp_enqueue_scripts', 'enqueue_parent_styles', 0);
-function enqueue_parent_styles() {
-    // Подключаем только то, что реально есть в родительской теме
-    wp_enqueue_style( 'parent-style-css', get_template_directory_uri().'/style.css' );
+
+
+/**
+ * Подключение стилей в дочерней теме Mozaika Child
+ */
+
+// 1. Отключаем только style.css родительской (если нужно)
+add_action('wp_enqueue_scripts', 'child_deregister_parent_styles', 0);
+function child_deregister_parent_styles() {
+    // Отключаем style.css родительской, если хотим полностью заменить его своим
+    wp_dequeue_style('style-css');
 }
 
-// Подключение стилей дочерней темы
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', 20);
-function enqueue_child_styles() {
-    // Подключаем Bootstrap из дочерней темы
-    wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/css/bootstrap.min.css' );
+// 2. Подключаем свои стили
+add_action('wp_enqueue_scripts', 'child_enqueue_styles', 20);
+function child_enqueue_styles() {
+    // Bootstrap НЕ подключаем — используем родительский
     
-    // Подключаем style.css дочерней темы
-    wp_enqueue_style( 
-        'child-style-css', 
-        get_stylesheet_directory_uri() . '/style.css', 
-        array( 'child-theme-css' ) 
-    );
-	
-	// Подключаем основной CSS дочерней темы
-    wp_enqueue_style( 
-        'child-theme-css', 
-        get_stylesheet_directory_uri() . '/css/theme.css', 
-        array( 'bootstrap-css' ) 
-    );
-    
-    
-}*/
-
-
-// Полностью отключаем все автоматические подключения родительских стилей
-add_action('wp_enqueue_scripts', 'disable_all_parent_styles', 0);
-function disable_all_parent_styles() {
-    // Отключаем все возможные варианты подключения родительского style.css
-    wp_deregister_style('parent-style');
-    wp_dequeue_style('parent-style');
-    wp_deregister_style('parent');
-    wp_dequeue_style('parent');
-    wp_deregister_style('mozaika-style');
-    wp_dequeue_style('mozaika-style');
-    wp_deregister_style('Mozaika-style');
-    wp_dequeue_style('Mozaika-style');
-}
-
-// Подключение стилей родительской темы
-add_action('wp_enqueue_scripts', 'enqueue_parent_styles', 5);
-function enqueue_parent_styles() {
-    // Проверяем существует ли файл перед подключением
-    if (file_exists(get_template_directory() . '/style.css')) {
-        wp_enqueue_style( 
-            'parent-main-style', get_template_directory_uri() . '/style.css', array(), wp_get_theme()->get('Version')
-        );
-    }
-}
-
-// Подключение стилей дочерней темы
-add_action('wp_enqueue_scripts', 'enqueue_child_styles', 20);
-function enqueue_child_styles() {
-    // Подключаем Bootstrap из дочерней темы
-    if ( file_exists( get_stylesheet_directory() . '/css/bootstrap.min.css' ) ) {
-        wp_enqueue_style( 'bootstrap-css', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), wp_get_theme()->get('Version') );
-    }
-    
-    // Подключаем основной CSS дочерней темы
+    // Основной CSS дочерней темы (зависит от родительского Bootstrap)
     if (file_exists(get_stylesheet_directory() . '/css/theme.css')) {
-        wp_enqueue_style( 
-            'child-theme-css', 
-            get_stylesheet_directory_uri() . '/css/theme.css', 
-            array( 'bootstrap-css' ),
+        wp_enqueue_style(
+            'child-theme',
+            get_stylesheet_directory_uri() . '/css/theme.css',
+            array('bootstrap-css'), // Зависимость от родительского Bootstrap
             wp_get_theme()->get('Version')
         );
     }
     
-    // Подключаем style.css дочерней темы
+    // style.css дочерней темы
     if (file_exists(get_stylesheet_directory() . '/style.css')) {
-        wp_enqueue_style( 
-            'child-style-css', 
-            get_stylesheet_directory_uri() . '/style.css', 
-            array( 'child-theme-css' ),
+        wp_enqueue_style(
+            'child-style',
+            get_stylesheet_directory_uri() . '/style.css',
+            array('child-theme'),
             wp_get_theme()->get('Version')
         );
     }
