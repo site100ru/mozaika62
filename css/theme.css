@@ -2868,3 +2868,147 @@ body.b-new-year:before {
 .parallax-section p {
     color: #C8C8C8;
 }
+
+
+
+.popup-overlay {
+    position: fixed;
+    top: 154px;
+    right: 0;
+    width: 350px;
+    height: 580px;
+    z-index: 999;
+    display: none; /* скрыт по умолчанию, JS покажет */
+}
+
+@media (max-width: 992px) {
+    .popup-overlay {
+        top: 110px;
+        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 360px) {
+    .popup-overlay {
+        width: 300px;
+    }
+}
+
+.popup-overlay.active {
+    display: block;
+}
+
+.popup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    border: 4px solid var(--corporate-color-1);
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: visible;
+    animation: popupIn 0.35s cubic-bezier(.34, 1.56, .64, 1) both;
+}
+
+@keyframes popupIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.popup-bg {
+    position: absolute;
+    inset: 0;
+    background: url('../img/popup.jpg') center/cover no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.popup-close {
+    position: absolute;
+    top: 20px; 
+    right: 20px;
+    width: 38px;
+    height: 38px;
+    padding: 9px;
+    background: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.25s;
+}
+
+.popup-close:hover {
+    opacity: 0.8;
+}
+
+.popup-close img {
+    width: 20px;
+    height: 20px;
+} 
+
+.popup-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    gap: 50px;
+    max-width: 200px;
+}
+
+.popup-description {
+    font-family: HelveticaNeueCyr-Roman, sans-serif;
+    font-size: 20px;
+    text-align: center;
+    line-height: 1.4;
+    color: #fff;
+}
+
+.popup-description strong {
+    font-family: HelveticaNeueCyr-Bold, sans-serif;
+}
+
+.popup-buttons {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.popup-btn-main {
+    width: 100%;
+    line-height: normal;
+    padding: 12px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.popup-btn-dismiss {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-family: HelveticaNeueCyr-Light, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    transition: opacity 0.3s ease;
+}
+
+.popup-btn-dismiss:hover {
+    opacity: 0.8;
+    color: #fff;
+}

@@ -1360,6 +1360,74 @@
 		
 		
 		
+        <?php
+            // Не показываем на странице с шаблоном "Кучина"
+            $is_cucina_page = is_page_template( 'cucina.php' );
+            if ( ! $is_cucina_page ) : ?>
+
+            <div class="popup-overlay" id="cucinaPopup">
+                <div class="popup">
+                    <div class="popup-bg"></div>
+
+                    <button class="popup-close" id="cucinaPopupClose">
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/close-popup.svg" alt="Закрыть">
+                    </button>
+
+                    <div class="popup-content">
+
+                        <div class="popup-logo">
+                            <a href="https://мозаика62.рф/кухни-cucina-в-рязани/">
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/cucina.png" alt="Cucina" style="max-width: 220px;">
+                            </a>
+                        </div>
+
+                        <div class="popup-description">
+                            Мы являемся официальным представителем кухонь <strong>Cucina</strong> в Рязани
+                        </div>
+
+                        <div class="popup-buttons">
+                            <a href="https://мозаика62.рф/кухни-cucina-в-рязани/" class="popup-btn-main btn-corporate-color-1 btn btn-lg">Подробнее</a>
+                            <button class="popup-btn-dismiss" id="cucinaPopupDismiss">Не интересует</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const popup      = document.getElementById('cucinaPopup');
+                    const btnClose   = document.getElementById('cucinaPopupClose');
+                    const btnDismiss = document.getElementById('cucinaPopupDismiss');
+                    const HIDE_DURATION = 12 * 60 * 60 * 1000; // 12 часов в мс
+                    const SHOW_DELAY    = 15 * 1000;           // 15 секунд
+
+                    function shouldShow() {
+                        const lastClosed = localStorage.getItem('cucinaPopupLastClosed');
+                        if ( ! lastClosed ) return true;
+                        return ( Date.now() - parseInt(lastClosed) ) > HIDE_DURATION;
+                    }
+
+                    function closePopup() {
+                        popup.classList.remove('active');
+                        localStorage.setItem('cucinaPopupLastClosed', Date.now().toString());
+                    }
+
+                    // Показываем через 15 сек если нужно
+                    if ( shouldShow() ) {
+                        setTimeout(function () {
+                            popup.classList.add('active');
+                        }, SHOW_DELAY);
+                    }
+
+                    // Закрытие крестиком
+                    btnClose.addEventListener('click', closePopup);
+
+                    // Закрытие «Не интересует»
+                    btnDismiss.addEventListener('click', closePopup);
+                });
+            </script>
+        <?php endif; ?>
 		
 		<!-- CONTACTS SECTION 4 -->
 		<section class="contacts-section-4">
