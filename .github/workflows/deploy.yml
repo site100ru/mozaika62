@@ -1,0 +1,29 @@
+name: Deploy мозаика62.рф
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Connect to server
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.MOZAIKA_HOST }}
+          username: ${{ secrets.MOZAIKA_USER }}
+          key: ${{ secrets.MOZAIKA_KEY }}
+          script: |
+            #Переключаемся в нужную папку
+            cd ~/mozaika/public_html/wp-content/themes/mozaika-child
+            
+            # Клонируем репозиторий в папку (только для первой выгрузки!!!)
+            #git clone https://github.com/site100ru/mozaika62.git .
+            
+            # Клонируем репозиторий в папку
+            git pull
+            
+            # Если кто то изменил файлы на сервере минуя GitHub, перезаписываем версию на сервере из GitHub
+            # git reset --hard HEAD
+            # git pull origin main
