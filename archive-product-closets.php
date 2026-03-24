@@ -1404,8 +1404,7 @@
                     const popup      = document.getElementById('cucinaPopup');
                     const btnClose   = document.getElementById('cucinaPopupClose');
                     const btnDismiss = document.getElementById('cucinaPopupDismiss');
-                    const HIDE_DURATION = 12 * 60 * 60 * 1000; // 12 часов в мс
-                    const SHOW_DELAY    = 15 * 1000;           // 15 секунд
+                    const HIDE_DURATION = 12 * 60 * 60 * 1000;  // 12 часов в мс
 
                     function shouldShow() {
                         const lastClosed = localStorage.getItem('cucinaPopupLastClosed');
@@ -1420,9 +1419,15 @@
 
                     // Показываем через 15 сек если нужно
                     if ( shouldShow() ) {
+                        const isFirstVisit = ! localStorage.getItem('cucinaPopupSeen');
+                        const delay = isFirstVisit ? 15 * 1000 : 0;
+
+                        // Фиксируем что уже был первый показ
+                        localStorage.setItem('cucinaPopupSeen', '1');
+
                         setTimeout(function () {
                             popup.classList.add('active');
-                        }, SHOW_DELAY);
+                        }, delay);
                     }
 
                     // Закрытие крестиком
