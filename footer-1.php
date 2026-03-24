@@ -3,7 +3,12 @@
 <?php
 // Не показываем на странице с шаблоном "Кучина"
 $is_cucina_page = is_page_template( 'cucina.php' );
-if ( ! $is_cucina_page ) : ?>
+
+if ( $is_cucina_page ) : ?>
+    <script>
+        localStorage.setItem('cucinaPopupLastClosed', Date.now().toString());
+    </script>
+<?php else : ?>
 
 <div class="popup-overlay" id="cucinaPopup">
     <div class="popup">
@@ -62,8 +67,6 @@ if ( ! $is_cucina_page ) : ?>
 
         // Закрытие крестиком
         btnClose.addEventListener('click', closePopup);
-
-        // Закрытие «Не интересует»
         btnDismiss.addEventListener('click', closePopup);
     });
 </script>
