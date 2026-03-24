@@ -22,8 +22,8 @@ jobs:
             #git clone https://github.com/site100ru/mozaika62.git .
             
             # Клонируем репозиторий в папку
-            # git pull
+            git pull
             
-            #Если кто то изменил файлы на сервере минуя GitHub, перезаписываем версию на сервере из GitHub
-            git reset --hard HEAD
-            git pull origin main
+            # Если кто то изменил файлы на сервере минуя GitHub, перезаписываем версию на сервере из GitHub
+            # git reset --hard HEAD
+            # git pull origin main
