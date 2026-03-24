@@ -19,7 +19,7 @@ jobs:
             cd ~/mozaika/public_html/wp-content/themes/mozaika-child
             
             # Клонируем репозиторий в папку (только для первой выгрузки!!!)
-            #git clone https://github.com/site100ru/mozaika62-rf.git .
+            #git clone https://github.com/site100ru/mozaika62.git .
             
             # Клонируем репозиторий в папку
             # git pull
