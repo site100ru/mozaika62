@@ -247,7 +247,7 @@ function my_woocommerce_get_breadcrumb($breadcrumb) {
 if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar(
 		array(
-			'name'          => 'Виджет в сайдбаре Кухни', //название виджета в админ-панели
+			'name'          => 'Виджет в сайдбаре', //название виджета в админ-панели
 			'id'            => 'wsidebar-1', //идентификатор виджета
 			'description'   => 'Показывается в категории Кухни', //описание виджета в админ-панели
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">', //открывающий тег виджета с динамичным идентификатором
@@ -257,7 +257,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		)
 	);
 
-	// Виджет для шкафов
+	/* Виджет для шкафов
 	register_sidebar(array(
 		'name'          => 'Сайдбар Шкафы',
 		'id'            => 'wsidebar-2',
@@ -266,7 +266,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_widget'  => '<div class="clear"></div></aside>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
-	));
+	));*/
 }
 	
 	
@@ -357,7 +357,7 @@ function child_enqueue_styles() {
 
 
 
-// Фильтр для виджета категорий товаров
+/* Фильтр для виджета категорий товаров
 function filter_product_categories_widget($list_args)
 {
 	// Получаем текущую категорию
@@ -380,6 +380,7 @@ function filter_product_categories_widget($list_args)
 	return $list_args;
 }
 add_filter('woocommerce_product_categories_widget_args', 'filter_product_categories_widget');
+*/
 
 
 

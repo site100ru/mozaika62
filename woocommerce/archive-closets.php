@@ -292,7 +292,7 @@
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
 				<div class="row text-start">
 					<div class="col-md-2 mb-5 mb-md-0" style="text-transform: uppercase; font-size: 14px;">
-						<?php dynamic_sidebar( 'wsidebar-2' ); ?>
+						<?php dynamic_sidebar( 'wsidebar-1' ); ?>
 					</div>
 					<div class="col-md-10">
 						<div class="row">
