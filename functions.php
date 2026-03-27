@@ -241,7 +241,7 @@ function my_woocommerce_get_breadcrumb($breadcrumb) {
 
 
 
-// Register taxonomy
+/* Register taxonomy
 add_action( 'init', 'create_taxonomy' );
 function create_taxonomy() {
 	
@@ -282,7 +282,7 @@ function create_taxonomy() {
 		// '_builtin'              => false,
 		//'update_count_callback' => '_update_post_term_count',
 	] );
-}
+}*/
 
 
 // Register post type
@@ -450,11 +450,11 @@ function child_enqueue_styles() {
 
 
 
-/*** ВКЛЮЧАЕМ EXCERPT FOR PAGES (ОПИСАНИЕ ДЛЯ СТРАНИЦ) ***/
+/*** ВКЛЮЧАЕМ EXCERPT FOR PAGES (ОПИСАНИЕ ДЛЯ СТРАНИЦ)
 add_action('init', 'add_excerpt_to_pages');
 function add_excerpt_to_pages() {
 	add_post_type_support('page', 'excerpt');
-}
+} ***/
 
 // Фильтр для виджета категорий товаров
 function filter_product_categories_widget($list_args)
