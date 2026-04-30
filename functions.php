@@ -1,5 +1,5 @@
 <?php
-// Bootstrap 5 wp_nav_menu walker
+/* Bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 	private $current_item;
 	private $dropdown_menu_alignment_values = [
@@ -98,7 +98,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 			';
 		}
 	}
-}
+}*/
 
 
 
