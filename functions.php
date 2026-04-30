@@ -129,11 +129,11 @@ function remove_wp_footer_credit() {
 add_action('init', 'remove_wp_footer_credit');
 
 
-/* WooCommerce support */
+/* WooCommerce support
 add_action( 'after_setup_theme', 'furniture_catalog_add_woocommerce_support' );
 function furniture_catalog_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
-}
+} */
 
 
 /* Изменяем размер миниатюр WooCommerce */
