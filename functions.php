@@ -1,5 +1,5 @@
 <?php
-// Bootstrap 5 wp_nav_menu walker
+/* Bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 	private $current_item;
 	private $dropdown_menu_alignment_values = [
@@ -98,7 +98,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 			';
 		}
 	}
-}
+}*/
 
 
 
@@ -129,11 +129,11 @@ function remove_wp_footer_credit() {
 add_action('init', 'remove_wp_footer_credit');
 
 
-/* WooCommerce support */
+/* WooCommerce support
 add_action( 'after_setup_theme', 'furniture_catalog_add_woocommerce_support' );
 function furniture_catalog_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
-}
+} */
 
 
 /* Изменяем размер миниатюр WooCommerce */
