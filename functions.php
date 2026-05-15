@@ -102,7 +102,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 
 
 
-/* Register a new menu */
+/* Register a new menu *
 add_action( 'after_setup_theme', function() {
 	register_nav_menus( [
 		'main-menu' => 'Main menu',
@@ -243,7 +243,7 @@ function my_woocommerce_get_breadcrumb($breadcrumb) {
 
 
 
-/* Wijet область в сайдбаре */
+/* Wijet область в сайдбаре *
 if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar(
 		array(
@@ -266,7 +266,7 @@ if ( function_exists( 'register_sidebar' ) ) {
 		'after_widget'  => '<div class="clear"></div></aside>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
-	));*/
+	));*
 }
 	
 	
