@@ -138,9 +138,9 @@ function furniture_catalog_add_woocommerce_support() {
 	
 	
 	
-/**
+/*
  * Change several of the breadcrumb defaults
- */
+ 
 add_filter( 'woocommerce_breadcrumb_defaults', 'jk_woocommerce_breadcrumbs' );
 function jk_woocommerce_breadcrumbs() {
 	return array(
@@ -153,7 +153,7 @@ function jk_woocommerce_breadcrumbs() {
 		);
 }
 
-/**/
+/**
 // Убираем ссылку на главную страницу сайта в хлебных крошках, чтобы потом подставить вместо этого ссылку с изображением
 add_filter( 'woocommerce_breadcrumb_defaults', 'wcc_change_breadcrumb_home_text' );
 function wcc_change_breadcrumb_home_text( $defaults ) {
@@ -164,7 +164,7 @@ function wcc_change_breadcrumb_home_text( $defaults ) {
 
 
 /* Добавляем ссылку на главную страницу магазина в хлебных крошках */
-/* Изменил от первоначальной версии */
+/* Изменил от первоначальной версии *
 add_filter( 'woocommerce_get_breadcrumb', function($crumbs, $Breadcrumb){
 	//$shop_page_id = wc_get_page_id('shop'); //Get the shop page ID
 	// Если это страница магазина, страница архива или таксономии продуктов, то добавляем впереде ссылку на страницу архива продуктов
@@ -185,7 +185,7 @@ add_filter( 'woocommerce_get_breadcrumb', function($crumbs, $Breadcrumb){
 }, 10, 2 );
 
 
-/* WC 2.6.4: Изменить любой элемент "хлебных крошек" */
+/* WC 2.6.4: Изменить любой элемент "хлебных крошек" *
 add_filter( 'woocommerce_get_breadcrumb', 'my_woocommerce_get_breadcrumb' );
 function my_woocommerce_get_breadcrumb($breadcrumb) {
 		
@@ -197,7 +197,7 @@ function my_woocommerce_get_breadcrumb($breadcrumb) {
 		}
 		
 	return $breadcrumb;
-}
+}*/
 
 
 
