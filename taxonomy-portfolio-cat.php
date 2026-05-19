@@ -263,7 +263,11 @@
 		<div class="row">
 			<div class="col">
 				<div class="breadcrumbs">
-					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a> / <a href="#">Наши работы</a></nav>
+					<nav class="woocommerce-breadcrumb" itemprop="breadcrumb">
+						<a href="<?php echo home_url('/'); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a>
+						/ <a href="<?php echo get_post_type_archive_link('portfolio'); ?>">Наши работы</a>
+						/ <?php echo esc_html( get_queried_object()->name ); ?>
+					</nav>
 				</div>
 			</div>
 		</div>
