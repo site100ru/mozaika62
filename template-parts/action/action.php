@@ -23,7 +23,7 @@ $actions_data = [
         'order' => 1,
         'category' => 'kitchen, home, cucina',
         'modal_data' => 'discount-5',
-        'description' => 'Скидка 5% На все кухни CUCINA до 31 мая'
+        'description' => 'Скидка 5% На все кухни CUCINA до 30 июня'
     ],
     [
         'image_path' => get_stylesheet_directory_uri() . '/img/actions/new/new-action-7.webp',
@@ -208,96 +208,87 @@ function get_column_classes($total, $index)
 
 <!-- Section actions -->
 <section class="archive-portfolio-section archive-portfolio <?php echo esc_attr($bg_color); ?>  pb-5">
-  <div class="container">
+	<div class="container">
 
-    <?php if ($show_breadcrumbs === 'true'): ?>
-    <div class="row">
-      <div class="col">
-        <nav class="breadcrumbs pt-4">
-          <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a>
-          / Акции
-          <?php echo esc_html($breadcrumbs_title); ?>
-        </nav>
-      </div>
-    </div>
-    <?php endif; ?>
+		<?php if ($show_breadcrumbs === 'true'): ?>
+		<div class="row">
+			<div class="col">
+				<nav class="breadcrumbs pt-4">
+					<a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/breadcrumbs-icon.svg"></a>
+					/ Акции
+					<?php echo esc_html($breadcrumbs_title); ?>
+				</nav>
+			</div>
+		</div>
+		<?php endif; ?>
 
-    <div class="row">
-      <div class="col text-md-center<?php echo ($show_breadcrumbs === 'false') ? ' pt-5' : ''; ?>">
-        <h2><?php echo esc_html($section_title); ?></h2>
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
-      </div>
-    </div>
+		<div class="row">
+			<div class="col text-md-center<?php echo ($show_breadcrumbs === 'false') ? ' pt-5' : ''; ?>">
+				<h2><?php echo esc_html($section_title); ?></h2>
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/section-title-dec.svg" class="mb-5">
+			</div>
+		</div>
 
-    <div class="row text-start <?php echo esc_attr($additional_classes); ?>">
-      <?php foreach ($displayed_actions as $index => $action): ?>
-      <div class="<?php echo get_column_classes($total_actions, $index); ?>">
-        <?php if ($card_type === 'modal'): ?>
-        <!-- Карточка с модальным окном -->
-        <a href="#" class="portfolio-item-link" data-bs-toggle="modal"
-          data-bs-target="#<?php echo esc_attr($modal_id); ?>"
-          data-action="<?php echo esc_attr($action['modal_data']); ?>">
-          <img src="<?php echo esc_url($action['image_path']); ?>" class="img-fluid rounded mb-3 w-100"
-            alt="<?php echo esc_attr($action['alt_text']); ?>"
-            data-category="<?php echo esc_attr($action['category']); ?>">
-        </a>
-        <p class="mb-5 d-none"><?php echo esc_html($action['description']); ?></p>
-        <?php else: ?>
-        <!-- Простая карточка с описанием -->
-        <img src="<?php echo esc_url($action['image_path']); ?>" class="img-fluid rounded mb-3 w-100"
-          alt="<?php echo esc_attr($action['alt_text']); ?>"
-          data-category="<?php echo esc_attr($action['category']); ?>">
-        <p class="mb-5 d-none"><?php echo esc_html($action['description']); ?></p>
-        <?php endif; ?>
-      </div>
-      <?php endforeach; ?>
-    </div>
+		<div class="row text-start <?php echo esc_attr($additional_classes); ?>">
+			<?php foreach ($displayed_actions as $index => $action): ?>
+			<div class="<?php echo get_column_classes($total_actions, $index); ?>">
+				<?php if ($card_type === 'modal'): ?>
+				<!-- Карточка с модальным окном -->
+				<a href="#" class="portfolio-item-link" data-bs-toggle="modal" data-bs-target="#<?php echo esc_attr($modal_id); ?>" data-action="<?php echo esc_attr($action['modal_data']); ?>">
+					<img src="<?php echo esc_url($action['image_path']); ?>" class="img-fluid rounded mb-3 w-100" alt="<?php echo esc_attr($action['alt_text']); ?>" data-category="<?php echo esc_attr($action['category']); ?>">
+				</a>
+				<p class="mb-5 d-none"><?php echo esc_html($action['description']); ?></p>
+				<?php else: ?>
+				<!-- Простая карточка с описанием -->
+				<img src="<?php echo esc_url($action['image_path']); ?>" class="img-fluid rounded mb-3 w-100" alt="<?php echo esc_attr($action['alt_text']); ?>" data-category="<?php echo esc_attr($action['category']); ?>">
+				<p class="mb-5 d-none"><?php echo esc_html($action['description']); ?></p>
+				<?php endif; ?>
+			</div>
+			<?php endforeach; ?>
+		</div>
 
-    <?php if ($show_button === 'true'): ?>
-    <div class="row">
-      <div class="col text-md-center">
-        <a href="/акции/" class="btn btn-lg btn-corporate-color-1 mt-4">Показать все акции</a>
-      </div>
-    </div>
-    <?php endif; ?>
-  </div>
+		<?php if ($show_button === 'true'): ?>
+		<div class="row">
+			<div class="col text-md-center">
+				<a href="/акции/" class="btn btn-lg btn-corporate-color-1 mt-4">Показать все акции</a>
+			</div>
+		</div>
+		<?php endif; ?>
+	</div>
 </section>
 
 <?php if ($card_type === 'modal'): ?>
 <!-- Order Modal -->
-<div class="modal fade" id="<?php echo esc_attr($modal_id); ?>" tabindex="-1"
-  aria-labelledby="<?php echo esc_attr($modal_id); ?>Label" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <form method="post" action="<?php echo get_stylesheet_directory_uri(); ?>/mails/callback-mail.php"
-      class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="<?php echo esc_attr($modal_id); ?>Label">Оставить заявку</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col">
-            <p><small>Мы свяжемся с Вами в ближайшее время и ответим на все вопросы по заявке! Для звонка
-                введите Ваше имя и телефон.</small></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-3 mb-md-0">
-            <input type="text" name="name" class="form-control" placeholder="Ваше имя">
-          </div>
-          <div class="col-md-6">
-            <input type="text" name="phone" class="form-control telMask" placeholder="Ваш телефон*" inputmode="text"
-              required>
-          </div>
-        </div>
-        <input type="hidden" name="action_type" class="actionTypeInput" value="">
-      </div>
-      <div class="modal-footer">
-        <input type="hidden" id="g-recaptcha-response-order-2" name="g-recaptcha-response">
-        <button type="submit" class="btn btn-corporate-color-1 mx-auto">Жду звонка</button>
-      </div>
-    </form>
-  </div>
+<div class="modal fade" id="<?php echo esc_attr($modal_id); ?>" tabindex="-1" aria-labelledby="<?php echo esc_attr($modal_id); ?>Label" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<form method="post" action="<?php echo get_stylesheet_directory_uri(); ?>/mails/callback-mail.php" class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="<?php echo esc_attr($modal_id); ?>Label">Оставить заявку</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col">
+						<p><small>Мы свяжемся с Вами в ближайшее время и ответим на все вопросы по заявке! Для звонка
+								введите Ваше имя и телефон.</small></p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6 mb-3 mb-md-0">
+						<input type="text" name="name" class="form-control" placeholder="Ваше имя">
+					</div>
+					<div class="col-md-6">
+						<input type="text" name="phone" class="form-control telMask" placeholder="Ваш телефон*" inputmode="text" required>
+					</div>
+				</div>
+				<input type="hidden" name="action_type" class="actionTypeInput" value="">
+			</div>
+			<div class="modal-footer">
+				<input type="hidden" id="g-recaptcha-response-order-2" name="g-recaptcha-response">
+				<button type="submit" class="btn btn-corporate-color-1 mx-auto">Жду звонка</button>
+			</div>
+		</form>
+	</div>
 </div>
 
 <script>
