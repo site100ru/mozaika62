@@ -9,27 +9,25 @@ Template: mozaika
     font-size: 14px;
     color: #C8C8C8;
 }
+
 /*** END HEADER ***/
 
 
 /*** ARCHIVE PRODUCT SECTION ***/
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a {
-	font-family: HelveticaNeueCyr-Light;
-	font-size: 14px;
-	width: auto;
-	color: var(--dark-color);
-	text-decoration: none;
+    font-family: HelveticaNeueCyr-Light;
+    font-size: 14px;
+    width: auto;
+    color: var(--dark-color);
+    text-decoration: none;
 }
 
 .widget_product_categories ul.product-categories {
-	list-style: none;
-	padding-left: 0;
+    list-style: none;
+    padding-left: 0;
 }
 
-.widget_product_categories ul.product-categories li {
-    
-	
-}
+.widget_product_categories ul.product-categories li {}
 
 .widget_product_categories ul.product-categories li.cat-item.current-cat a {
     color: #00A3D3;
@@ -46,12 +44,12 @@ h6,
 }
 
 .form-check-label {
-	font-family: HelveticaNeueCyr-Roman;
-	color: #323232;
-	font-size: 16px;
-	margin-bottom: 0;
-	text-decoration: none;
-	/*text-transform: uppercase;*/
+    font-family: HelveticaNeueCyr-Roman;
+    color: #323232;
+    font-size: 16px;
+    margin-bottom: 0;
+    text-decoration: none;
+    /*text-transform: uppercase;*/
 }
 
 
@@ -60,90 +58,90 @@ h6,
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a:hover,
 .cat-item.current-cat a,
 .cat-item.current-cat span {
-	color: var(--corporate-color-1);
+    color: var(--corporate-color-1);
 }
 
 
 .woocommerce .woocommerce-widget-layered-nav-list {
-	list-style: none;
-	padding-left: 0;
-	margin-bottom: 25px !important;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 25px !important;
 }
 
 .woocommerce-widget-layered-nav-list li {
-	position: relative;
+    position: relative;
 }
 
 
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a:before,
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a:focus:before,
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term.woocommerce-widget-layered-nav-list__item--chosen.chosen a:before {
-	content: '';
-	display: inline-block;
-	width: 18px;
+    content: '';
+    display: inline-block;
+    width: 18px;
     height: 18px;
     border: 1px solid #dddddd;
-	margin-right: 8px;
-	position: relative;
-	top: 3px;
-	
+    margin-right: 8px;
+    position: relative;
+    top: 3px;
+
 }
 
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term a:focus:after,
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term.woocommerce-widget-layered-nav-list__item--chosen.chosen a:after {
-	content: '';
-	display: inline-block;
+    content: '';
+    display: inline-block;
     width: 10px;
     height: 10px;
-	background-color: var(--corporate-color-1);
-	margin-right: 8px;
-	position: absolute;
-	left: 4px;
+    background-color: var(--corporate-color-1);
+    margin-right: 8px;
+    position: absolute;
+    left: 4px;
     top: 7px;
 }
 
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term.woocommerce-widget-layered-nav-list__item--chosen.chosen a:focus:after,
 .woocommerce-widget-layered-nav-list__item.wc-layered-nav-term.woocommerce-widget-layered-nav-list__item--chosen.chosen a:active:after {
-	opacity: 0;
+    opacity: 0;
 }
 
 .cat-item {
-	margin-bottom: 6px;
+    margin-bottom: 6px;
 }
 
 .cat-item a {
-	font-family: HelveticaNeueCyr-Light;
-	color: var(--dark-color);
-	text-decoration: none;
+    font-family: HelveticaNeueCyr-Light;
+    color: var(--dark-color);
+    text-decoration: none;
 }
 
 .cat-item a:hover {
-	color: var(--corporate-color-1);
+    color: var(--corporate-color-1);
 }
+
 /*** END ARCHIVE PRODUCT SECTION ***/
 
 
 /*** SINGLE PRODUCT SECTION ***/
 .single-product-section ul,
 .product-price__label {
-	list-style: none;
-	padding-left: 0;
-	font-family: Gilroy-Regular;
+    list-style: none;
+    padding-left: 0;
+    font-family: Gilroy-Regular;
     color: #323232;
     font-size: 20px;
 }
+
 /*** SINGLE PRODUCT SECTION ***/
 
 
 /*** OTHER STYLES ***/
 .add_to_cart_button,
 .product_type_simple {
-	display: none;
+    display: none;
 }
 
-bdi {
-	
-}
+bdi {}
 
 .active {
     color: var(--corporate-color-1);
@@ -228,12 +226,13 @@ p.advantages {
     opacity: 1;
 }
 
+/* 
 .description_about {
     padding-left: 20px;
     padding-right: 0;
     margin-bottom: 0;
     margin-bottom: 0;
-}
+} */
 
 .description_about p {
     line-height: 27px;
@@ -263,10 +262,11 @@ p.advantages {
     padding-left: 0;
     padding-right: 0;
 }
-.contact-box-info span
-{
+
+.contact-box-info span {
     line-height: 20px;
 }
+
 /* .overlay
 {
     height: 540px;
@@ -510,7 +510,7 @@ strong {
     /*width: 100%;
     left: 11px;
     bottom: 0;*/
-	
+
     width: 94%;
     left: 30px;
     bottom: 18px;
@@ -537,13 +537,16 @@ strong {
         position: relative;
         height: 550px;
     }
+
     .home-video-section video {
         top: auto;
         left: -110%;
     }
+
     .home-title {
         font-size: 32px;
     }
+
     .carousel-item-2 img {
         height: auto;
         max-width: 75vw;
@@ -609,6 +612,7 @@ strong {
     .pc-btn-more {
         display: block;
     }
+
     .contact-box-info {
         flex-direction: column;
         gap: 15px;
@@ -616,31 +620,53 @@ strong {
 }
 
 #menu-contacts-desktop-menu span.nav-link {
-	padding-left: 0px;
-	padding-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Пункты меню в футер-3 которые не показываем */
-#menu-main-menu-2 > li:nth-child(3) { display: none !important }
-#menu-main-menu-2 > li:nth-child(6) { display: none !important }
-#menu-main-menu-2 > li:nth-child(10) { display: none !important }
+#menu-main-menu-2>li:nth-child(3) {
+    display: none !important
+}
 
-#menu-main-menu-3 > li:nth-child(1) { display: none !important }
-#menu-main-menu-3 > li:nth-child(5) { display: none !important }
-#menu-main-menu-3 > li:nth-child(8) { display: none !important }
-#menu-main-menu-3 > li:nth-child(12) { display: none !important }
+#menu-main-menu-2>li:nth-child(6) {
+    display: none !important
+}
+
+#menu-main-menu-2>li:nth-child(10) {
+    display: none !important
+}
+
+#menu-main-menu-3>li:nth-child(1) {
+    display: none !important
+}
+
+#menu-main-menu-3>li:nth-child(5) {
+    display: none !important
+}
+
+#menu-main-menu-3>li:nth-child(8) {
+    display: none !important
+}
+
+#menu-main-menu-3>li:nth-child(12) {
+    display: none !important
+}
 
 
 /* Отключаем хлебные крошки woocommerce */
-.site-main > .woocommerce-breadcrumb { display: none; }
+.site-main>.woocommerce-breadcrumb {
+    display: none;
+}
 
 
 .woocommerce-loop-category__title,
 .woocommerce-loop-product__title {
     font-family: HelveticaNeueBoldCondensed;
     font-size: 20px;
-	color: #fff;
+    color: #fff;
 }
+
 /*** OTHER STYLES ***/
 
 .review-info .review-title {
@@ -651,7 +677,7 @@ strong {
     font-size: 16px;
 }
 
-.test{}
+.test {}
 
 
 @media (max-width: 1199.98px) {
@@ -662,8 +688,11 @@ strong {
         top: 0px;
     }
 }
+
 @media (max-width: 992px) {
-    .single_img, .single_img_slide {
+
+    .single_img,
+    .single_img_slide {
         max-width: 100%;
         width: 100%;
         height: auto;
@@ -672,7 +701,7 @@ strong {
 }
 
 
-.single-product-section  {
+.single-product-section {
     margin-top: 60px;
 }
 
@@ -688,7 +717,7 @@ strong {
     }
 }
 
-.site-main > .woocommerce-breadcrumb {
+.site-main>.woocommerce-breadcrumb {
     display: none;
 }
 
