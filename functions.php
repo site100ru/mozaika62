@@ -100,8 +100,6 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu {
 	}
 }*/
 
-
-
 /* Register a new menu *
 add_action( 'after_setup_theme', function() {
 	register_nav_menus( [
@@ -135,9 +133,6 @@ function furniture_catalog_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 } */
 
-	
-	
-	
 /*
  * Change several of the breadcrumb defaults
  
@@ -199,9 +194,6 @@ function my_woocommerce_get_breadcrumb($breadcrumb) {
 	return $breadcrumb;
 }*/
 
-
-
-
 /* Wijet область в сайдбаре *
 if ( function_exists( 'register_sidebar' ) ) {
 	register_sidebar(
@@ -236,39 +228,34 @@ if ( function_exists( 'register_sidebar' ) ) {
  */
 
 // 1. Отключаем только style.css родительской (если нужно)
-add_action('wp_enqueue_scripts', 'child_deregister_parent_styles', 0);
-function child_deregister_parent_styles() {
-    // Отключаем style.css родительской, если хотим полностью заменить его своим
-    wp_dequeue_style('style-css');
+add_action("wp_enqueue_scripts", "child_deregister_parent_styles", 0);
+function child_deregister_parent_styles()
+{
+	// Отключаем style.css родительской, если хотим полностью заменить его своим
+	wp_dequeue_style("style-css");
 }
 
 // 2. Подключаем свои стили
-add_action('wp_enqueue_scripts', 'child_enqueue_styles', 20);
-function child_enqueue_styles() {
-    // Bootstrap НЕ подключаем — используем родительский
-    
-    // Основной CSS дочерней темы (зависит от родительского Bootstrap)
-    if (file_exists(get_stylesheet_directory() . '/css/theme.css')) {
-        wp_enqueue_style(
-            'child-theme',
-            get_stylesheet_directory_uri() . '/css/theme.css',
-            array('bootstrap-css'), // Зависимость от родительского Bootstrap
-            wp_get_theme()->get('Version')
-        );
-    }
-    
-    // style.css дочерней темы
-    if (file_exists(get_stylesheet_directory() . '/style.css')) {
-        wp_enqueue_style(
-            'child-style',
-            get_stylesheet_directory_uri() . '/style.css',
-            array('child-theme'),
-            wp_get_theme()->get('Version')
-        );
-    }
+add_action("wp_enqueue_scripts", "child_enqueue_styles", 20);
+function child_enqueue_styles()
+{
+	// Bootstrap НЕ подключаем — используем родительский
+
+	// Основной CSS дочерней темы (зависит от родительского Bootstrap)
+	if (file_exists(get_stylesheet_directory() . "/css/theme.css")) {
+		wp_enqueue_style(
+			"child-theme",
+			get_stylesheet_directory_uri() . "/css/theme.css",
+			["bootstrap-css"], // Зависимость от родительского Bootstrap
+			filemtime(get_stylesheet_directory() . "/css/theme.css"),
+		);
+	}
+
+	// style.css дочерней темы
+	if (file_exists(get_stylesheet_directory() . "/style.css")) {
+		wp_enqueue_style("child-style", get_stylesheet_directory_uri() . "/style.css", ["child-theme"], filemtime(get_stylesheet_directory() . "/style.css"));
+	}
 }
-
-
 
 /* Фильтр для виджета категорий товаров
 function filter_product_categories_widget($list_args)
@@ -295,8 +282,6 @@ function filter_product_categories_widget($list_args)
 add_filter('woocommerce_product_categories_widget_args', 'filter_product_categories_widget');
 */
 
-
-
 // КЛАССЫ В BODY_CLASS
 // add_filter('body_class', 'custom_body_classes');
 
@@ -306,18 +291,16 @@ add_filter('woocommerce_product_categories_widget_args', 'filter_product_categor
 // 	return $classes;
 // }
 
-
-
 /*** ДЕЛАЕМ ФАЙЛ ROBOTS.TXT ***/
-add_filter('robots_txt', 'custom_robots_txt');
+add_filter("robots_txt", "custom_robots_txt");
 function custom_robots_txt($output)
 {
-    $output = "User-agent: *\n";
-    $output .= "Disallow: *?add-to-cart=*\n";
+	$output = "User-agent: *\n";
+	$output .= "Disallow: *?add-to-cart=*\n";
 	$output .= "Disallow: *?filter_*\n";
 	$output .= "Disallow: *filter_*\n";
 	$output .= "Disallow: */page/*\n\n";
 	$output .= "https://мозаика62.рф/sitemap.xml";
-    return $output;
+	return $output;
 }
 /*** END ДЕЛАЕМ ФАЙЛ ROBOTS.TXT ***/
