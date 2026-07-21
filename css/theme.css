@@ -912,7 +912,7 @@ h1.home-title {
 	width: 100%;
 	position: fixed;
 	background: url(../img/home-background.webp) no-repeat;
-	background-position: 50% 100%;
+	background-position: 50% 60%;
 	background-size: cover;
 	z-index: -1;
 }
@@ -3101,5 +3101,3 @@ body.b-new-year:before {
 	opacity: 0.8;
 	color: #fff;
 }
-
-.test {}
