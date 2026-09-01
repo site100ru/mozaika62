@@ -23,7 +23,7 @@ $actions_data = [
 		"order" => 1,
 		"category" => "kitchen, home, cucina",
 		"modal_data" => "discount-5",
-		"description" => "Скидка 5% На все кухни CUCINA до 31 августа",
+		"description" => "Скидка 5% На все кухни CUCINA до 30 сентября",
 	],
 	[
 		"image_path" => get_stylesheet_directory_uri() . "/img/actions/new/new-action-7.webp",
