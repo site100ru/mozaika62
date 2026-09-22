@@ -262,3 +262,69 @@ if (!empty($portfolio_categories)) {
     </div>
 </section>
 <!-- END SECTION PORTFOLIO -->
+
+<div id="galleryWrapper" style="background: rgba(0,0,0,0.85); display: none; position: fixed; top: 0; bottom: 0; left: 0; right: 0; z-index: 9999;">
+    <?php foreach (get_posts(['post_type' => 'portfolio', 'numberposts' => -1]) as $gallery_post): ?>
+        <?php
+        $gallery_images = [];
+        for ($i = 1; $i <= 9; $i++) {
+            $src = get_post_meta($gallery_post->ID, '_img-' . $i, true);
+            if ($src) {
+                $gallery_images[] = $src;
+            }
+        }
+        ?>
+        <div id="gallery-<?php echo $gallery_post->ID; ?>" class="carousel slide" data-bs-ride="false" style="display: none; position: fixed; top: 0; height: 100%; width: 100%;">
+            <div class="carousel-indicators">
+                <?php foreach ($gallery_images as $n => $src): ?>
+                    <button type="button" data-bs-target="#gallery-<?php echo $gallery_post->ID; ?>" data-bs-slide-to="<?php echo $n; ?>" aria-label="Slide <?php echo $n + 1; ?>"></button>
+                <?php endforeach; ?>
+            </div>
+            <div class="carousel-inner h-100">
+                <?php foreach ($gallery_images as $n => $src): ?>
+                    <div id="img-<?php echo $gallery_post->ID; ?>-<?php echo $n; ?>" class="carousel-item h-100">
+                        <div class="row align-items-center h-100">
+                            <div class="col text-center">
+                                <img src="<?php echo esc_url($src); ?>" class="img-fluid" style="max-width: 90vw; max-height: 90vh;" alt="<?php echo esc_attr($gallery_post->post_title); ?>" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#gallery-<?php echo $gallery_post->ID; ?>" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#gallery-<?php echo $gallery_post->ID; ?>" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    <?php endforeach; ?>
+
+    <button type="button" onclick="closeGallery();" class="btn-close btn-close-white" style="position: fixed; top: 25px; right: 25px; z-index: 99999;" aria-label="Close"></button>
+</div>
+
+<script>
+    function galleryOn(gal, img) {
+        var gallery = document.getElementById(gal);
+        var image = document.getElementById(img);
+        if (!gallery || !image) {
+            return;
+        }
+        gallery.querySelectorAll('.carousel-item, .carousel-indicators button').forEach(function (el) {
+            el.classList.remove('active');
+        });
+        image.classList.add('active');
+        gallery.querySelector('.carousel-indicators button').classList.add('active');
+        gallery.style.display = 'block';
+        document.getElementById('galleryWrapper').style.display = 'block';
+    }
+
+    function closeGallery() {
+        document.getElementById('galleryWrapper').style.display = 'none';
+        document.querySelectorAll('#galleryWrapper > .carousel').forEach(function (el) {
+            el.style.display = 'none';
+        });
+    }
+</script>
