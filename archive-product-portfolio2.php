@@ -16,7 +16,10 @@
 		<link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
 
 		<title>Студия кухни «Мозаика» - Кухни на заказ по Вашим размерам в Рязани</title>
-		<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.jpg" type="image/x-icon" />
+		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico" sizes="any" />
+	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png" />
 		
 		<!-- Yandex.Metrika counter -->
 		<script type="text/javascript" >

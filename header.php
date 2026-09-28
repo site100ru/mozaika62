@@ -27,7 +27,10 @@
 	
 	<!-- Quiz CSS -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/quiz.css">
-	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.jpg" type="image/x-icon" />
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico" sizes="any" />
+	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900">
 	
 	<?php wp_head(); ?>
