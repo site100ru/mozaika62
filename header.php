@@ -27,10 +27,10 @@
 	
 	<!-- Quiz CSS -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/css/quiz.css">
-	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico?v=2" sizes="any" />
-	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg?v=2" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png?v=2" />
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png?v=2" />
+	<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico?v=3" sizes="any" />
+	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg?v=3" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png?v=3" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png?v=3" />
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900">
 	
 	<?php wp_head(); ?>
