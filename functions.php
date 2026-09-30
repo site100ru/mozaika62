@@ -304,3 +304,6 @@ function custom_robots_txt($output)
 	return $output;
 }
 /*** END ДЕЛАЕМ ФАЙЛ ROBOTS.TXT ***/
+
+/*** Отключаем «Иконку сайта» из админки — фавикон задаётся в header.php ***/
+remove_action( 'wp_head', 'wp_site_icon', 99 );
