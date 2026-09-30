@@ -19,10 +19,10 @@
 		<!-- Artem CSS -->
 		<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 		
-		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico" sizes="any" />
-	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png" />
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png" />
+		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico?v=2" sizes="any" />
+	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg?v=2" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png?v=2" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png?v=2" />
 
 		<!-- <script src="https://kit.fontawesome.com/064ae6a0a2.js"></script> -->
 		

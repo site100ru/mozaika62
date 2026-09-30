@@ -16,10 +16,10 @@
 		<link href="<?php echo get_stylesheet_directory_uri(); ?>/style.css" rel="stylesheet">
 
 		<title>Студия кухни «Мозаика» - Кухни на заказ по Вашим размерам в Рязани</title>
-		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico" sizes="any" />
-	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg" />
-	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png" />
-	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png" />
+		<link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.ico?v=2" sizes="any" />
+	<link rel="icon" type="image/svg+xml" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon.svg?v=2" />
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/favicon-32x32.png?v=2" />
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri(); ?>/img/ico/apple-touch-icon.png?v=2" />
 		
 		<!-- Yandex.Metrika counter -->
 		<script type="text/javascript" >
