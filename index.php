@@ -1,12 +1,10 @@
 <?php
-
 /**
  * Template Name: Главная
  * Template Post Type: page
  */
 
 include 'header.php';
-
 ?>
 
 <div id="sp-home" class="scroll-points"></div>
