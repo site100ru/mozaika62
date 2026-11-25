@@ -79,6 +79,7 @@
     </script>
 <?php endif; ?>
 
+<?php if ( ! is_page_template( 'template-home.php' ) ) : ?>
 <!-- CONTACTS SECTION 4 -->
 <section class="contacts-section-4">
 
@@ -425,6 +426,98 @@
 
 </section>
 <!-- /CONTACTS SECTION 4 -->
+<?php else : ?>
+<!-- New footer -->
+<div class="nd">
+	<footer class="pt-4 pt-lg-5 pb-3 border-top-0 text-center text-lg-start text-body-secondary">
+		<div class="container-xxl">
+			<div class="row gy-4">
+				<!-- О компании -->
+				<div class="col-lg-3 d-flex flex-column align-items-center align-items-lg-start gap-3">
+					<a href="<?php echo home_url('/'); ?>">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/logo-green.png" width="229" height="70" alt="Кухни Мозаика">
+					</a>
+					<p class="nd-text-xs">Салон кухонь и корпусной мебели на заказ в Рязани. Индивидуальный подход, собственное производство, гарантия 2 года</p>
+					<div class="d-flex gap-3">
+						<a href="https://wa.me/79511014610?web=1&app_absent=1" target="_blank" class="nd-fade">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/wa.png" width="30" height="30" alt="WhatsApp">
+						</a>
+						<a href="https://max.ru/u/f9LHodD0cOJ43FcHRXMZDl7Pj6Znjki8fXkN8cmXFNxOU9f0FntW8dTdUis" target="_blank" class="nd-fade">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/max.png" width="30" height="30" alt="Max">
+						</a>
+						<a href="https://t.me/+79511014610" target="_blank" class="nd-fade">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/tg.png" width="30" height="30" alt="Telegram">
+						</a>
+						<a href="#" target="_blank" class="nd-fade">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/insta.png" width="30" height="30" alt="Instagram">
+						</a>
+						<a href="#" target="_blank" class="nd-fade">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/vk.png" width="30" height="30" alt="ВКонтакте">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-lg-9 ps-lg-5 d-flex flex-column flex-lg-row justify-content-between gap-3">
+					<!-- Меню подвала: пункт верхнего уровня — заголовок колонки, вложенные — ссылки -->
+					<?php
+					$nd_footer_locations = get_nav_menu_locations();
+					$nd_footer_items     = wp_get_nav_menu_items( $nd_footer_locations['nd-footer'] ?? 0 ) ?: [];
+					?>
+					<?php foreach ( $nd_footer_items as $nd_column ) : ?>
+						<?php if ( $nd_column->menu_item_parent ) continue; ?>
+						<div class="d-flex flex-column align-items-center align-items-lg-start gap-2">
+							<button type="button" class="nd-footer__title collapsed d-flex align-items-center gap-2 nd-text fw-medium text-uppercase text-body" data-bs-toggle="collapse" data-bs-target="#nd-footer-<?php echo $nd_column->ID; ?>" aria-expanded="false"><?php echo esc_html( $nd_column->title ); ?></button>
+							<div class="collapse d-lg-block" id="nd-footer-<?php echo $nd_column->ID; ?>">
+								<div class="d-flex flex-column align-items-center align-items-lg-start gap-2 small">
+									<?php foreach ( $nd_footer_items as $nd_link ) : ?>
+										<?php if ( (int) $nd_link->menu_item_parent !== $nd_column->ID ) continue; ?>
+										<a href="<?php echo esc_url( $nd_link->url ); ?>"<?php echo $nd_link->target ? ' target="' . esc_attr( $nd_link->target ) . '"' : ''; ?>><?php echo esc_html( $nd_link->title ); ?></a>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						</div>
+					<?php endforeach; ?>
+
+					<!-- Контакты -->
+					<div class="d-flex flex-column align-items-center align-items-lg-start gap-2">
+						<div class="nd-text fw-medium text-uppercase text-body">Контакты</div>
+						<div class="d-flex flex-column gap-2 small">
+							<a href="tel:89511014610" class="d-flex gap-2 fs-6 fw-semibold">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/ico-phone.svg" width="20" height="22" alt="">8 (951) 101-46-10
+							</a>
+							<a href="mailto:mozaika62@bk.ru" class="d-flex gap-2">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/ico-mail.svg" width="20" height="22" alt="">mozaika62@bk.ru
+							</a>
+							<span class="d-flex gap-2 text-start">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/ico-calendar.svg" width="20" height="22" alt="">Пн-Сб: с 10:00-19:00<br>Вс: с 10:00-17:00
+							</span>
+							<span class="d-flex gap-2">
+								<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/home/ico-pin.svg" width="20" height="22" alt="">г. Рязань, ул. Чапаева, 56
+							</span>
+							<a href="https://yandex.ru/maps/?text=Рязань, ул. Чапаева, 56" target="_blank" class="align-self-center align-self-lg-end text-success text-decoration-underline">показать на карте</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Копирайт -->
+			<div class="d-flex flex-column gap-3 mt-4 pt-3 border-top small">
+				<div class="nd-footer__legal d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+					<span>© 2024–2026 Салон мебели «Мозаика». Все права защищены</span>
+					<a href="<?php echo home_url('/политика-конфиденциальности/'); ?>">Политика конфиденциальности</a>
+					<a href="<?php echo home_url('/пользовательское-соглашение/'); ?>">Пользовательское соглашение</a>
+					<a href="<?php echo home_url('/публичная-оферта/'); ?>">Публичная оферта</a>
+				</div>
+				<div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-3">
+					<span>ИП Новичков Владимир Антонович <br class="d-lg-none">ИНН 62300993201 ОГРН 324620000044796</span>
+					<span>Создание, продвижение и поддержка: <a href="https://site100.ru" target="_blank" class="text-decoration-underline">site100.ru</a></span>
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<!-- /New footer -->
+<?php endif; ?>
 
 
 
@@ -759,9 +852,9 @@
 
 
 <!-- Выбераем функцию для header -->
-<?php if (is_product()) { ?>
+<?php if ( function_exists( 'is_product' ) && is_product() ) { ?>
 	<script>prilipalo();</script>
-<? } else { ?>
+<? } elseif ( ! is_page_template( 'template-home.php' ) ) { ?>
 	<script>vyezjalo();</script>
 <?php } ?>
 

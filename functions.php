@@ -255,6 +255,12 @@ function child_enqueue_styles()
 	if (file_exists(get_stylesheet_directory() . "/style.css")) {
 		wp_enqueue_style("child-style", get_stylesheet_directory_uri() . "/style.css", ["child-theme"], filemtime(get_stylesheet_directory() . "/style.css"));
 	}
+
+	if (is_page_template("template-home.php")) {
+		wp_enqueue_style("inter-font", "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap", [], null);
+		wp_enqueue_style("home", get_stylesheet_directory_uri() . "/css/home.css", ["child-style"], filemtime(get_stylesheet_directory() . "/css/home.css"));
+		wp_enqueue_script("home", get_stylesheet_directory_uri() . "/js/home.js", [], filemtime(get_stylesheet_directory() . "/js/home.js"), ["strategy" => "defer"]);
+	}
 }
 
 /* Фильтр для виджета категорий товаров
@@ -307,3 +313,8 @@ function custom_robots_txt($output)
 
 /*** Отключаем «Иконку сайта» из админки — фавикон задаётся в header.php ***/
 remove_action( 'wp_head', 'wp_site_icon', 99 );
+
+add_action( 'after_setup_theme', function () {
+	register_nav_menu( 'nd-header', 'Шапка (новый дизайн)' );
+	register_nav_menu( 'nd-footer', 'Подвал (новый дизайн)' );
+}, 20 );

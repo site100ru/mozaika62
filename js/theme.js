@@ -13,6 +13,10 @@ $(window).scroll(function (e) {
 /* End parallax home section */
 
 jQuery(function ($) {
+    if (!$('.parallax-background').length) {
+        return;
+    }
+
     $(window).on('scroll', function () {
         const scrollTop = $(window).scrollTop();
         const sectionTop = $('.parallax-background').offset().top;
